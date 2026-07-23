@@ -6,10 +6,10 @@ import logo from "@/assets/soltech-logo.png";
 import { company } from "@/content/site";
 
 const groups = {
-  Company: ["About", "Why Soltech", "Process", "Careers"],
-  Services: ["Residential", "Commercial", "Industrial", "EV Charging"],
-  Resources: ["Projects", "Case Studies", "Blog", "Brochure"],
-  Support: ["Certificates", "Service Areas", "Contact", "AMC Plans"],
+  Company: ["About", "Why Soltech"],
+  Services: ["Residential", "Commercial", "Industrial",],
+  Resources: ["Projects", "Brochure"],
+  Support: ["Certificates", "Service Areas", "Contact"],
 };
 
 const socials = [
