@@ -86,10 +86,11 @@ export function Navbar() {
             >
               {links.map((l) => (
                 l.href.startsWith("/") ? (
-                  <Link key={l.href} to={l.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-navy hover:bg-primary/5"
+                  <Link key={l.href} to={l.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-navy hover:bg-primary/5">
+                    {l.label}
                   </Link>
                 ) : (
-                  <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-navy hover:bg-primary/5"
+                  <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-navy hover:bg-primary/5">
                     {l.label}
                   </a>
                 )
