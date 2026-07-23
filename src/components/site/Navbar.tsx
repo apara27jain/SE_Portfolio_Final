@@ -47,7 +47,7 @@ export function Navbar() {
                 <Link
                   key={l.href}
                   to={l.href}
-                  className="relative text-sm font-semibold text-primary transition-all duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-solar after:transition-all after:duration-300 hover:after:w-full hover:[text-shadow:0_0_12px_rgba(253,184,19,0.6)]"
+                  className="relative text-sm font-semibold text-sky-400 transition-all duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-solar after:transition-all after:duration-300 hover:after:w-full hover:[text-shadow:0_0_12px_rgba(253,184,19,0.6)]"
                 >
                   {l.label}
                 </Link>
@@ -55,7 +55,7 @@ export function Navbar() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className="relative text-sm font-semibold text-primary transition-all duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-solar after:transition-all after:duration-300 hover:after:w-full hover:[text-shadow:0_0_12px_rgba(253,184,19,0.6)]"
+                  className="relative text-sm font-semibold text-sky-400 transition-all duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-solar after:transition-all after:duration-300 hover:after:w-full hover:[text-shadow:0_0_12px_rgba(253,184,19,0.6)]"
                 >
                   {l.label}
                 </a>
@@ -88,11 +88,11 @@ export function Navbar() {
             >
               {links.map((l) => (
                 l.href.startsWith("/") ? (
-                  <Link key={l.href} to={l.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-primary hover:bg-primary/5">
+                  <Link key={l.href} to={l.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-sky-400 hover:bg-primary/5">
                     {l.label}
                   </Link>
                 ) : (
-                  <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-primary hover:bg-primary/5">
+                  <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-sky-400 hover:bg-primary/5">
                     {l.label}
                   </a>
                 )
