@@ -75,9 +75,9 @@ export const services: Service[] = [
   { title: "Net Metering Solutions", description: "Efficient integration with the power grid to maximize savings and optimize energy flow.", icon: "Zap" },
   { title: "Solar Water Heaters & Lighting", description: "Eco-friendly heating and lighting alternatives to lower utility costs and carbon emissions.", icon: "Droplets" },
   { title: "Battery Backup & Inverter Integration", description: "Smart energy storage and backup systems for uninterrupted power supply.", icon: "BatteryCharging" },
+  { title: "Technical & Annual Support", description: "End-to-end technical assistance, testing and AMC to ensure efficiency over time.", icon: "Wrench" },
   { title: "Aesthetic Solar Designs", description: "Visually appealing, efficient systems tailored to flats, societies and industries.", icon: "Building2" },
   { title: "Financing & Cost-Benefit Analysis", description: "Strategic financial planning and return-on-investment insights for better decision-making.", icon: "BadgeIndianRupee" },
-  { title: "Technical Support & Annual Maintenance", description: "End-to-end technical assistance, testing and AMC to ensure efficiency over time.", icon: "Wrench" },
   { title: "Solar System Health Monitoring", description: "Real-time monitoring and performance analytics to ensure maximum energy output and early fault detection.", icon: "Shield" },
   { title: "Grid-Connected Solar Systems", description: "Scalable, high-performance systems that reduce dependency on conventional electricity sources.", icon: "Gauge" },
 ];
