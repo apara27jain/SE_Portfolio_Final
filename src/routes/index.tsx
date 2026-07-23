@@ -4,7 +4,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { Services, WhyChoose } from "@/components/site/Sections1";
 import { Projects } from "@/components/site/Sections2";
-import { Reviews, ProjectTicker, TrustedClients, Certifications, FAQ } from "@/components/site/Sections3";
+import { Reviews, ProjectTicker, Certifications, FAQ } from "@/components/site/Sections3";
 import { Brochure, Contact } from "@/components/site/Sections4";
 import { Footer } from "@/components/site/Footer";
 
@@ -32,7 +32,6 @@ function Index() {
         <WhyChoose />
         <Projects />
         <ProjectTicker />
-        <TrustedClients />
         <Reviews />
         <Certifications />
         <FAQ />
