@@ -33,7 +33,7 @@ export function Footer() {
               />
             </a>
             <p className="mt-4 max-w-xs text-sm text-white/60">
-              JAipur's premium solar energy brand — engineering a smarter, cleaner future for
+              Jaipur's premium solar energy brand — engineering a smarter, cleaner future for
               homes, businesses and industries.
             </p>
             <div className="mt-6 flex gap-3">
