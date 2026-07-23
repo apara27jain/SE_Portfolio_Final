@@ -2,6 +2,7 @@ import { Sun, Linkedin, Instagram, MessageCircle, Facebook, Send } from "lucide-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import logo from "@/assets/soltech-logo.png";
 import { company } from "@/content/site";
 
 const groups = {
@@ -25,15 +26,14 @@ export function Footer() {
         <div className="grid gap-12 pb-14 lg:grid-cols-[1.4fr_2fr_1.6fr]">
           <div>
             <a href="#top" className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-solar text-navy">
-                <Sun className="h-5 w-5" />
-              </span>
-              <span className="font-display text-lg font-extrabold text-white">
-                Soltech<span className="text-solar">.</span>
-              </span>
+              <img
+                src={logo}
+                alt="Soltech Energy"
+                className="h-12 w-12 rounded-full object-cover ring-2 ring-solar/40"
+              />
             </a>
             <p className="mt-4 max-w-xs text-sm text-white/60">
-              Rajasthan's premium solar energy brand — engineering a smarter, cleaner future for
+              JAipur's premium solar energy brand — engineering a smarter, cleaner future for
               homes, businesses and industries.
             </p>
             <div className="mt-6 flex gap-3">
