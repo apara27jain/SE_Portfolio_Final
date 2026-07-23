@@ -53,7 +53,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="glass-dark inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-widest text-solar"
         >
-          <span className="h-2 w-2 rounded-full bg-solar" /> Rajasthan's Premium Solar Brand
+          <span className="h-2 w-2 rounded-full bg-solar" /> Jaipur's Premium Solar Brand
         </motion.span>
 
         <motion.h1
@@ -72,7 +72,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-6 max-w-xl text-lg text-white/75"
         >
-          Tailored rooftop solar solutions for homes, businesses, and industries across Rajasthan.
+          Tailored rooftop solar solutions for homes, businesses, and industries across Jaipur.
         </motion.p>
 
         <motion.div
