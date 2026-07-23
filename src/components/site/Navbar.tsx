@@ -47,15 +47,15 @@ export function Navbar() {
                 <Link
                   key={l.href}
                   to={l.href}
-                  className={cn("relative text-sm font-semibold transition-all duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-solar after:transition-all after:duration-300 hover:after:w-full hover:text-black", scrolled ? "text-navy" : "text-sky-400")}>
-                  {l.label}
+                  className={cn("relative text-sm font-semibold transition-all duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-solar after:transition-all after:duration-300 hover:after:w-full",
+                                scrolled? "text-navy hover:text-black": "text-sky-400 hover:text-solar hover:[text-shadow:0_0_12px_rgba(253,184,19,0.7)]")} >                         {l.label}
                 </Link>
               ) : (
                 <a
                   key={l.href}
                   href={l.href}
-                  className={cn("relative text-sm font-semibold transition-all duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-solar after:transition-all after:duration-300 hover:after:w-full hover:text-black", scrolled ? "text-navy" : "text-sky-400")}>
-                  {l.label}
+                  className={cn("relative text-sm font-semibold transition-all duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-solar after:transition-all after:duration-300 hover:after:w-full",
+                                scrolled? "text-navy hover:text-black": "text-sky-400 hover:text-solar hover:[text-shadow:0_0_12px_rgba(253,184,19,0.7)]")} >                  {l.label}
                 </a>
               )
             ))}
