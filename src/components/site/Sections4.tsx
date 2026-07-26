@@ -37,16 +37,18 @@ export function Brochure() {
             <div className="relative">
               <h2 className="text-3xl text-white sm:text-4xl">Download Our Complete Solar Solutions Guide</h2>
               <p className="mt-4 text-white/75">
-                Everything you need to know about going solar — system options, savings models,
+                Everything you need to know about going solar - system options, savings models,
                 subsidy details and the Soltech difference, in one premium guide.
               </p>
-              <Button
-                size="lg"
-                onClick={() => toast.success("Brochure download starting…")}
-                className="mt-7 rounded-xl bg-gradient-solar px-7 font-semibold text-navy shadow-solar hover:opacity-90"
-              >
+            <Button
+              size="lg"
+              asChild
+              className="mt-7 rounded-xl bg-gradient-solar px-7 font-semibold text-navy shadow-solar hover:opacity-90"
+            >
+              <a href="/soltech-brochure.pdf" target="_blank" download="Soltech Energy Brochure">
                 <Download className="mr-1 h-5 w-5" /> Download Corporate Brochure
-              </Button>
+              </a>
+            </Button>
             </div>
           </div>
         </Reveal>
