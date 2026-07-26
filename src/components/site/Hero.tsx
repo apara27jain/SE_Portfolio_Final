@@ -88,9 +88,9 @@ export function Hero() {
             </a>
           </Button>
           <Button asChild size="lg" variant="outline" className="rounded-xl border-white/30 bg-white/5 px-7 text-base font-semibold text-white backdrop-blur hover:bg-white/15 hover:text-white">
-            <a href="#brochure">
-              <Download className="mr-1 h-5 w-5" /> Download Brochure
-            </a>
+           <a href="/soltech-brochure.pdf" target="_blank" download="Soltech Energy Brochure">
+             <Download className="mr-1 h-5 w-5" /> Download Brochure
+           </a>
           </Button>
         </motion.div>
 
