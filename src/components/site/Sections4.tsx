@@ -121,9 +121,9 @@ export function Contact() {
                     <Input required placeholder="Full name" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
                     <Input required type="tel" placeholder="Phone" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
                   </div>
-                  <Input required type="email" placeholder="Email address" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
+                  <Input type="email" placeholder="Email address" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
                   <Input placeholder="City / Location" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
-                  <Textarea required rows={4} placeholder="Tell us about your project…" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
+                  <Textarea rows={4} placeholder="Tell us about your project…" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
                   <Button type="submit" size="lg" className="w-full rounded-xl bg-gradient-solar font-semibold text-navy shadow-solar hover:opacity-90">
                     <Send className="mr-1 h-5 w-5" /> Schedule Free Consultation
                   </Button>
