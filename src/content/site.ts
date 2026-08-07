@@ -181,7 +181,7 @@ export const faqs = [
   { q: "How does net metering work?", a: "Surplus energy you generate is exported to the grid and credited against your consumption." },
   { q: "What maintenance is required?", a: "Solar is low-maintenance. Our AMC plans include cleaning, monitoring and rapid repairs." },
   { q: "What warranty do you offer?", a: "Up to 25-year performance warranty on panels and comprehensive workmanship coverage." },
-  { q: "How long does installation take?", a: "Residential systems typically go live in 7–14 days; commercial timelines vary by scale." },
+  { q: "How long does installation take?", a: "Systems installations typically take Minimum 30-40 days after all documents are cleared from Jvvln (bijlee board). Or 30-40 days after approval of the file from Electricity board." },
 ];
 
 export const serviceAreas = ["Jaipur", "Ajmer", "Kota", "Udaipur", "Jodhpur", "Bikaner"];
