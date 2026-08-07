@@ -43,7 +43,7 @@ export function Hero() {
         animate={{ y: [0, 16, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
       >
-        <img src={soltechLogo} alt="Soltech Energy" className="h-5 w-5 object-contain">
+        <img src={soltechLogo} alt="Soltech Energy" className="h-5 w-5 object-contain"/>
         <span className="text-sm font-semibold text-white">Live: 8 MWh today</span>
       </motion.div>
 
