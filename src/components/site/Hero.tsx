@@ -3,15 +3,16 @@ import { ArrowRight, Download, Sun, Leaf, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Counter } from "./primitives";
 import heroImg from "@/assets/hero-solar.jpg";
+import soltechLogo from "@/assets/soltech-logo.png";
 
 const stats = [
-  { value: 500, suffix: "+", label: "Happy Customers" },
-  { value: 650, suffix: "+", label: "Projects Done" },
-  { value: 15, suffix: "+", label: "Years Experience" },
+  { value: 1800, suffix: "+", label: "Clients" },
+  { value: 2000, suffix: "+", label: "Projects Done" },
+  { value: 8, suffix: "+", label: "Years Experience" },
 ];
 
 const badges = [
-  { icon: ShieldCheck, label: "15+ Years Experience" },
+  { icon: ShieldCheck, label: "8+ Years Experience" },
   { icon: Leaf, label: "Clean Energy Solutions" },
   { icon: Sun, label: "End-to-End Service" },
 ];
@@ -42,8 +43,8 @@ export function Hero() {
         animate={{ y: [0, 16, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Sun className="h-5 w-5 text-solar" />
-        <span className="text-sm font-semibold text-white">Live: 4.2 MWh today</span>
+        <img src={soltechLogo} alt="Soltech Energy" className="h-9 w-9 object-contain">
+        <span className="text-sm font-semibold text-white">Live: 8 MWh today</span>
       </motion.div>
 
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-4 pb-20 pt-36 sm:px-6">
