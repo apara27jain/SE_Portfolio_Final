@@ -36,7 +36,7 @@ export function Navbar() {
             <img
               src={logo}
               alt="Soltech Energy"
-              className="h-14 w-14 rounded-full object-cover shadow-solar ring-2 ring-solar/40 transition-transform duration-300 hover:scale-105"
+              className="h-18 w-18 rounded-full object-cover shadow-solar ring-2 ring-solar/40 transition-transform duration-300 hover:scale-105"
             />
           </a>
 
