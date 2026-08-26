@@ -1,8 +1,7 @@
-import { Linkedin, Instagram, MessageCircle, Facebook, Phone, AtSign } from "lucide-react";
+import { Linkedin, Instagram, MessageCircle, Facebook, Phone } from "lucide-react";
 import logo from "@/assets/soltech-logo.png";
 import { company } from "@/content/site";
 
-// Custom Threads SVG Icon component since it's not standard in base Lucide set
 function ThreadsIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -39,85 +38,70 @@ const socials = [
   {
     name: "Threads",
     icon: ThreadsIcon,
-    href: company.social.threads,
+    href: (company.social as { threads?: string }).threads || "https://www.threads.net/@soltech.energy",
     bg: "bg-gradient-to-r from-[#101010] to-[#2B2B2B] text-white border border-white/20 hover:border-white/40",
   },
 ];
 
 export function Footer() {
+  const formattedPhoneLink = `tel:${company.phone.replace(/[\s-]/g, "")}`;
+
   return (
-    <footer className="bg-navy pt-16">
+    <footer className="bg-navy border-t border-white/10 pt-10 pb-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         
-        {/* MAP SECTION */}
-        <div className="mb-12 overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-2xl">
-<iframe
-  title="Soltech Energy Office Location"
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.533267592472!2d75.7685002!3d26.9183008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3857e4e16d5%3A0x62660a08e12d41fb!2sSoltech%20Energy!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
-  width="100%"
-  height="320"
-  style={{ border: 0 }}
-  allowFullScreen={false}
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-  className="w-full grayscale filter contrast-125 transition-all duration-500 hover:grayscale-0"
-/>
-        </div>
-
-        {/* BRAND & CONTACT INFO SECTION (Wider & Scaled Up) */}
-        <div className="pb-14">
-          <div className="max-w-2xl">
+        {/* BRAND & CONTACT INFO */}
+        <div className="pb-8">
+          <div className="max-w-xl">
             {/* Logo */}
             <a href="#top" className="inline-flex items-center gap-3">
               <img
                 src={logo}
-                alt="Soltech Energy"
-                className="h-16 w-16 rounded-full object-cover ring-2 ring-solar/60"
+                alt={company.name}
+                className="h-12 w-12 rounded-full object-cover ring-1 ring-solar/40"
               />
             </a>
 
-            {/* Phone Number */}
-            <div className="mt-5 flex items-center gap-3 text-lg font-bold text-white">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-solar/20 text-solar">
-                <Phone className="h-4 w-4" />
-              </div>
+            {/* Subdued Phone Number */}
+            <div className="mt-4 flex items-center gap-2.5 text-white/90">
+              <Phone className="h-4 w-4 text-solar" />
               <a 
-                href="tel:+918239573979" 
-                className="text-xl font-bold tracking-wide text-white transition-colors hover:text-solar"
+                href={formattedPhoneLink} 
+                className="text-sm font-medium transition-colors hover:text-solar"
               >
-                +91 8239573979
+                {company.phone}
               </a>
             </div>
 
-            {/* Main Header & Paragraph */}
-            <h3 className="mt-4 font-display text-xl font-bold text-white sm:text-2xl">
+            {/* Clean Sub-header & Description */}
+            <h3 className="mt-3 font-display text-lg font-semibold text-white sm:text-xl">
               Jaipur's Premium Solar Energy Brand
             </h3>
             
-            <p className="mt-3 text-base leading-relaxed text-white/80 sm:text-lg">
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
               Engineering a smarter, cleaner future for homes, businesses, and industries with high-efficiency rooftop solar installations and turnkey energy solutions.
             </p>
 
-            {/* Social Icons with Distinct Color Gradients */}
-            <div className="mt-7 flex flex-wrap gap-3.5">
+            {/* Color-Pop Social Icons */}
+            <div className="mt-5 flex items-center gap-3">
               {socials.map((s, i) => (
                 <a
                   key={i}
                   href={s.href}
                   aria-label={s.name}
-                  className={`grid h-12 w-12 place-items-center rounded-xl shadow-md transition-all duration-300 hover:-translate-y-1 ${s.bg}`}
+                  className={`grid h-9 w-9 place-items-center rounded-lg shadow-sm transition-transform duration-200 hover:-translate-y-0.5 ${s.bg}`}
                 >
-                  <s.icon className="h-5 w-5" />
+                  <s.icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        {/* BOTTOM COPYRIGHT FOOTER */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-7 text-sm text-white/50 sm:flex-row">
+        {/* COPYRIGHT BAR */}
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
           <p>© {new Date().getFullYear()} {company.name}. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex gap-4">
             <a href="#" className="transition-colors hover:text-solar">Privacy Policy</a>
             <a href="#" className="transition-colors hover:text-solar">Terms of Service</a>
           </div>
