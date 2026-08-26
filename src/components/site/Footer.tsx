@@ -47,6 +47,7 @@ export function Footer() {
   const formattedPhoneLink = `tel:${company.phone.replace(/[\s-]/g, "")}`;
 
   return (
+    <footer className="bg-navy pt-8 pb-6">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         
         {/* BRAND & CONTACT INFO */}
