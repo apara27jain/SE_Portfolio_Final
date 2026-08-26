@@ -32,19 +32,23 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(253,184,19,0.18),transparent_55%)]" />
       </div>
 
-      {/* floating elements */}
+      {/* Floating Elements */}
       <motion.div
-        className="absolute right-[8%] top-[22%] hidden h-24 w-24 rounded-3xl bg-solar/20 blur-xl md:block"
+        className="absolute right-[8%] top-[20%] hidden h-32 w-32 rounded-3xl bg-solar/20 blur-2xl md:block"
         animate={{ y: [0, -24, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
+      
+      {/* Scaled-up Floating Live Badge */}
       <motion.div
-        className="glass-dark absolute right-[12%] top-[34%] hidden items-center gap-2 rounded-2xl px-4 py-3 md:flex"
+        className="glass-dark absolute right-[8%] top-[30%] hidden items-center gap-3.5 rounded-3xl border border-white/20 px-6 py-4 shadow-2xl backdrop-blur-xl md:flex"
         animate={{ y: [0, 16, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
       >
-        <img src={soltechLogo} alt="Soltech Energy" className="h-5 w-5 object-contain"/>
-        <span className="text-sm font-semibold text-white">Live: 8 MWh today</span>
+        <img src={soltechLogo} alt="Soltech Energy" className="h-8 w-8 object-contain" />
+        <span className="text-lg font-bold tracking-wide text-white">
+          Live: <span className="text-solar">8 MWh today</span>
+        </span>
       </motion.div>
 
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-4 pb-20 pt-36 sm:px-6">
@@ -89,9 +93,9 @@ export function Hero() {
             </a>
           </Button>
           <Button asChild size="lg" variant="outline" className="rounded-xl border-white/30 bg-white/5 px-7 text-base font-semibold text-white backdrop-blur hover:bg-white/15 hover:text-white">
-           <a href="/soltech-brochure.pdf" target="_blank" download="Soltech Energy Brochure">
-             <Download className="mr-1 h-5 w-5" /> Download Brochure
-           </a>
+            <a href="/soltech-brochure.pdf" target="_blank" download="Soltech Energy Brochure">
+              <Download className="mr-1 h-5 w-5" /> Download Brochure
+            </a>
           </Button>
         </motion.div>
 
