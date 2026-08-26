@@ -39,7 +39,7 @@ const socials = [
   {
     name: "Threads",
     icon: ThreadsIcon,
-    href: company.social.threads || "#",
+    href: company.social.threads,
     bg: "bg-gradient-to-r from-[#101010] to-[#2B2B2B] text-white border border-white/20 hover:border-white/40",
   },
 ];
