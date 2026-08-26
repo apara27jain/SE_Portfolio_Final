@@ -5,17 +5,19 @@ import { cn } from "@/lib/utils";
 import * as Icons from "lucide-react";
 import type { LucideProps } from "lucide-react";
 
+interface RevealProps {
+  children: ReactNode;
+  delay?: number;
+  y?: number;
+  className?: string;
+}
+
 export function Reveal({
   children,
   delay = 0,
   y = 28,
   className,
-}: {
-  children: ReactNode;
-  delay?: number;
-  y?: number;
-  className?: string;
-}) {
+}: RevealProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y }}
@@ -29,15 +31,17 @@ export function Reveal({
   );
 }
 
+interface CounterProps {
+  value: number;
+  prefix?: string;
+  suffix?: string;
+}
+
 export function Counter({
   value,
   prefix = "",
   suffix = "",
-}: {
-  value: number;
-  prefix?: string;
-  suffix?: string;
-}) {
+}: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const mv = useMotionValue(0);
@@ -50,7 +54,8 @@ export function Counter({
       ease: "easeOut",
       onUpdate: (v) => setDisplay(Math.round(v).toLocaleString("en-IN")),
     });
-    return controls.stop;
+
+    return () => controls.stop();
   }, [inView, value, mv]);
 
   return (
@@ -62,9 +67,23 @@ export function Counter({
   );
 }
 
-export function Icon({ name, ...props }: { name: string } & LucideProps) {
-  const Cmp = (Icons as unknown as Record<string, React.ComponentType<LucideProps>>)[name] ?? Icons.Sparkles;
+interface IconProps extends LucideProps {
+  name: string;
+}
+
+export function Icon({ name, ...props }: IconProps) {
+  const Cmp =
+    (Icons as unknown as Record<string, React.ComponentType<LucideProps>>)[name] ??
+    Icons.Sparkles;
   return <Cmp {...props} />;
+}
+
+interface SectionHeadingProps {
+  eyebrow?: string;
+  title: ReactNode;
+  subtitle?: string;
+  light?: boolean;
+  className?: string;
 }
 
 export function SectionHeading({
@@ -73,13 +92,7 @@ export function SectionHeading({
   subtitle,
   light = false,
   className,
-}: {
-  eyebrow?: string;
-  title: ReactNode;
-  subtitle?: string;
-  light?: boolean;
-  className?: string;
-}) {
+}: SectionHeadingProps) {
   return (
     <div className={cn("mx-auto max-w-2xl text-center", className)}>
       {eyebrow && (
@@ -87,7 +100,7 @@ export function SectionHeading({
           <span
             className={cn(
               "inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest",
-              light ? "bg-white/10 text-solar" : "bg-primary/8 text-primary",
+              light ? "bg-white/10 text-solar" : "bg-primary/8 text-primary"
             )}
           >
             {eyebrow}
@@ -98,7 +111,7 @@ export function SectionHeading({
         <h2
           className={cn(
             "mt-5 text-3xl leading-tight sm:text-4xl md:text-5xl",
-            light ? "text-white" : "text-navy",
+            light ? "text-white" : "text-navy"
           )}
         >
           {title}
@@ -109,7 +122,7 @@ export function SectionHeading({
           <p
             className={cn(
               "mt-4 text-base leading-relaxed sm:text-lg",
-              light ? "text-white/70" : "text-muted-foreground",
+              light ? "text-white/70" : "text-muted-foreground"
             )}
           >
             {subtitle}
