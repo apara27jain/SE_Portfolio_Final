@@ -54,9 +54,6 @@ export function Hero() {
     </span>
   </div>
   <div className="flex flex-col">
-    <span className="text-[10px] font-medium uppercase tracking-wider text-white/60">
-      System Generation
-    </span>
     <span className="text-sm font-bold tracking-wide text-white">
       Live: <span className="text-solar">8 kW Solar Power</span>
     </span>
