@@ -119,21 +119,32 @@ export function Contact() {
               ))}
             </div>
             
-            {/* Embedded Soltech Energy Jaipur Map */}
-            <div className="mt-8 overflow-hidden rounded-3xl border border-white/10">
-              <iframe
-                title="Soltech Energy Office Location"
-                src="https://maps.google.com/maps?q=Soltech+Energy+Jaipur&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="240"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full grayscale filter contrast-125 transition-all duration-500 hover:grayscale-0"
-              />
-            </div>
-          </div>
+            {/* Embedded Soltech Energy Jaipur Map + Direct Link */}
+<div className="mt-8 overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-2">
+  <div className="relative overflow-hidden rounded-2xl">
+    <iframe
+      title="Soltech Energy Office Location"
+      src="https://maps.google.com/maps?q=Soltech+Energy,+A-25,+Vivekanand+Colony,+Naya+Khera,+Vidyadhar+Nagar,+Jaipur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      width="100%"
+      height="220"
+      style={{ border: 0 }}
+      allowFullScreen={false}
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      className="w-full grayscale filter contrast-125 transition-all duration-500 hover:grayscale-0"
+    />
+    
+    {/* Overlay Button: Opens your exact listing page on click */}
+    <a
+      href="https://www.google.com/maps/place/Soltech+Energy/@26.949024,67.5520414,6z/data=!4m10!1m2!2m1!1sSoltech+Energy+Jaipur!3m6!1s0x396db3857e4e16d5:0x62660a08e12d41fb!8m2!3d26.949024!4d75.7725964!15s520023!16s%2Fg%2F11sb4w9d3x"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="absolute right-3 top-3 rounded-lg bg-navy/90 px-3 py-1.5 text-xs font-semibold text-solar shadow-lg backdrop-blur-md transition-all hover:bg-solar hover:text-navy"
+    >
+      Open in Maps ↗
+    </a>
+  </div>
+</div>
 
           <Reveal>
             <div className="glass-dark rounded-3xl p-8">
