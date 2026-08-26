@@ -51,17 +51,17 @@ export function Footer() {
         
         {/* MAP SECTION */}
         <div className="mb-12 overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-2xl">
-          <iframe
-            title="Soltech Energy Office Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113840.40489958742!2d75.717753!3d26.9124336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db6123456789%3A0x62660a08e12d41fb!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
-            width="100%"
-            height="320"
-            style={{ border: 0 }}
-            allowFullScreen={false}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full grayscale filter contrast-125 transition-all duration-500 hover:grayscale-0"
-          />
+<iframe
+  title="Soltech Energy Office Location"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.533267592472!2d75.7685002!3d26.9183008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3857e4e16d5%3A0x62660a08e12d41fb!2sSoltech%20Energy!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+  width="100%"
+  height="320"
+  style={{ border: 0 }}
+  allowFullScreen={false}
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  className="w-full grayscale filter contrast-125 transition-all duration-500 hover:grayscale-0"
+/>
         </div>
 
         {/* BRAND & CONTACT INFO SECTION (Wider & Scaled Up) */}
