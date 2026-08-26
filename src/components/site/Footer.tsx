@@ -47,60 +47,59 @@ export function Footer() {
   const formattedPhoneLink = `tel:${company.phone.replace(/[\s-]/g, "")}`;
 
   return (
-    <footer className="bg-navy pt-8 pb-6">
+    <footer className="bg-navy pt-10 pb-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         
         {/* BRAND & CONTACT INFO */}
         <div className="pb-8">
-          <div className="max-w-xl">
+          <div className="max-w-2xl">
             {/* Logo */}
             <a href="#top" className="inline-flex items-center gap-3">
               <img
                 src={logo}
                 alt={company.name}
-                className="h-12 w-12 rounded-full object-cover ring-1 ring-solar/40"
+                className="h-14 w-14 rounded-full object-cover ring-2 ring-solar/40"
               />
             </a>
 
             {/* Subdued Phone Number */}
-            <div className="mt-4 flex items-center gap-2.5 text-white/90">
-              <Phone className="h-4 w-4 text-solar" />
-              <a 
-                href={formattedPhoneLink} 
-                className="text-sm font-medium transition-colors hover:text-solar"
-              >
-                {company.phone}
-              </a>
-            </div>
+            <div className="mt-5 flex items-center gap-3 text-white">
+  <Phone className="h-5 w-5 text-solar" />
+  <a 
+    href={formattedPhoneLink} 
+    className="text-base font-medium transition-colors hover:text-solar"
+  >
+    {company.phone}
+  </a>
+</div>
 
             {/* Clean Sub-header & Description */}
-            <h3 className="mt-3 font-display text-lg font-semibold text-white sm:text-xl">
-              Jaipur's Premium Solar Energy Brand
-            </h3>
+<h3 className="mt-4 font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">
+  Jaipur's Premium Solar Energy Brand
+</h3>
             
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
-              Engineering a smarter, cleaner future for homes, businesses, and industries with high-efficiency rooftop solar installations and turnkey energy solutions.
-            </p>
+<p className="mt-3 text-base leading-relaxed text-white/80 sm:text-lg">
+  Engineering a smarter, cleaner future for homes, businesses, and industries with high-efficiency rooftop solar installations and turnkey energy solutions.
+</p>
 
             {/* Color-Pop Social Icons */}
             <div className="mt-5 flex items-center gap-3">
               {socials.map((s, i) => (
                 <a
-                  key={i}
-                  href={s.href}
-                  aria-label={s.name}
-                  className={`grid h-9 w-9 place-items-center rounded-lg shadow-sm transition-transform duration-200 hover:-translate-y-0.5 ${s.bg}`}
-                >
-                  <s.icon className="h-4 w-4" />
-                </a>
+  key={i}
+  href={s.href}
+  aria-label={s.name}
+  className={`grid h-10 w-10 place-items-center rounded-xl shadow-md transition-transform duration-200 hover:-translate-y-0.5 ${s.bg}`}
+>
+  <s.icon className="h-5 w-5" />
+</a>
               ))}
             </div>
           </div>
         </div>
 
         {/* COPYRIGHT BAR */}
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
-          <p>© {new Date().getFullYear()} {company.name}. All rights reserved.</p>
+<div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-white/60 sm:flex-row">          <p>© {new Date().getFullYear()} {company.name}. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#" className="transition-colors hover:text-solar">Privacy Policy</a>
             <a href="#" className="transition-colors hover:text-solar">Terms of Service</a>
