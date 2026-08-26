@@ -98,12 +98,17 @@ export function Contact() {
               ))}
             </div>
             <div className="mt-8 overflow-hidden rounded-3xl border border-white/10">
-              <iframe
-                title="Soltech Energy location map"
-                src="https://www.google.com/maps?q=Jaipur,Rajasthan&output=embed"
-                className="h-56 w-full"
-                loading="lazy"
-              />
+<iframe
+  title="Soltech Energy Office Location"
+  src="https://maps.google.com/maps?q=cid:7090652854075262747&output=embed"
+  width="100%"
+  height="240"
+  style={{ border: 0 }}
+  allowFullScreen={false}
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  className="w-full rounded-2xl grayscale filter contrast-125 transition-all duration-500 hover:grayscale-0"
+/>
             </div>
           </div>
 
