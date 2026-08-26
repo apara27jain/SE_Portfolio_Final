@@ -58,7 +58,7 @@ export interface Company {
 export const company: Company = {
   name: "Soltech Energy",
   tagline: "Turn Sunshine into Savings",
-  phone: "+91 83025 73979",
+  phone: "+91 82395 73979",
   website: "soltechenergy.co.in",
   address: "Jaipur, Rajasthan, India",
   yearsExperience: 15,
