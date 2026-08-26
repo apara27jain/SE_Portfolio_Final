@@ -40,27 +40,28 @@ export function Hero() {
       />
       
       {/* Prominently Scaled Floating Live Generation Badge */}
-      <motion.div
-        className="glass-dark absolute right-[6%] top-[25%] hidden items-center gap-4 rounded-3xl border border-white/25 px-7 py-5 shadow-2xl backdrop-blur-2xl md:flex"
-        animate={{ y: [0, 18, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <div className="relative flex items-center justify-center">
-          <img src={soltechLogo} alt="Soltech Energy" className="h-12 w-12 object-contain" />
-          <span className="absolute -right-1 -top-1 flex h-3.5 w-3.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-emerald-500"></span>
-          </span>
-        </div>
-        <div className="flex flex-col">
-          <span className="text-xs font-semibold uppercase tracking-wider text-white/70">
-            System Generation
-          </span>
-          <span className="text-xl font-extrabold tracking-wide text-white sm:text-2xl">
-            Live: <span className="text-solar">8 kW Solar Power</span>
-          </span>
-        </div>
-      </motion.div>
+      {/* Decent, Balanced Live Badge */}
+<motion.div
+  className="glass-dark absolute right-[6%] top-[28%] hidden items-center gap-3 rounded-2xl border border-white/20 px-4 py-2.5 shadow-xl backdrop-blur-md md:flex"
+  animate={{ y: [0, 10, 0] }}
+  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+>
+  <div className="relative flex items-center justify-center">
+    <img src={soltechLogo} alt="Soltech Energy" className="h-7 w-7 object-contain" />
+    <span className="absolute -right-0.5 -top-0.5 flex h-2.5 w-2.5">
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+      <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+    </span>
+  </div>
+  <div className="flex flex-col">
+    <span className="text-[10px] font-medium uppercase tracking-wider text-white/60">
+      System Generation
+    </span>
+    <span className="text-sm font-bold tracking-wide text-white">
+      Live: <span className="text-solar">8 kW Solar Power</span>
+    </span>
+  </div>
+</motion.div>
 
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-4 pb-20 pt-36 sm:px-6">
         <motion.span
