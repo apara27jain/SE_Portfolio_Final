@@ -67,6 +67,7 @@ export const company: Company = {
     instagram: "https://www.instagram.com/soltech.energy/",
     facebook: "https://www.facebook.com/profile.php?id=100086510259114",
     whatsapp: "https://api.whatsapp.com/send?phone=91-08302573979&text=Hello",
+    threads: "https://www.threads.net/@soltech.energy",
   },
 };
 
