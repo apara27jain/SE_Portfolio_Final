@@ -6,12 +6,8 @@ import industrial from "@/assets/project-industrial.jpg";
  * PROJECT PHOTO FOLDERS
  * ------------------------------------------------------------------
  * Every real project photo lives under src/assets/projects/<slug>/photo-N.jpg.
- * Rather than hand-writing an import line per photo (unmanageable once
- * there are dozens of projects with 10-30 photos each), Vite's
- * import.meta.glob eagerly loads every matching file at build time and
- * we group them by folder. To add a new project's gallery: drop its
- * images in a new src/assets/projects/<slug>/ folder as photo-1.jpg,
- * photo-2.jpg, etc., then call getProjectGallery("<slug>") below.
+ * Vite's import.meta.glob eagerly loads every matching file at build time
+ * and groups them by folder.
  */
 const projectPhotoModules = import.meta.glob<string>("/src/assets/projects/*/*.jpg", {
   eager: true,
@@ -42,14 +38,24 @@ const vidhyadharGallery = getProjectGallery("vidhyadhar-nagar-jaipur-10kw");
 
 /**
  * CMS-READY CONTENT LAYER
- * ------------------------------------------------------------------
- * All editable content for the marketing site lives here as typed
- * collections. To wire a real admin/CMS later (e.g. Lovable Cloud),
- * replace these exported arrays with fetched data of the same shape —
- * no component changes required.
  */
 
-export const company = {
+export interface Company {
+  name: string;
+  tagline: string;
+  phone: string;
+  website: string;
+  address: string;
+  yearsExperience: number;
+  social: {
+    linkedin: string;
+    instagram: string;
+    facebook: string;
+    whatsapp: string;
+  };
+}
+
+export const company: Company = {
   name: "Soltech Energy",
   tagline: "Turn Sunshine into Savings",
   phone: "+91 83025 73979",
@@ -82,7 +88,13 @@ export const services: Service[] = [
   { title: "Grid-Connected Solar Systems", description: "Scalable, high-performance systems that reduce dependency on conventional electricity sources.", icon: "Gauge" },
 ];
 
-export const whyChoose = [
+export interface WhyChoose {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export const whyChoose: WhyChoose[] = [
   { title: "Reliability", description: "On-time execution with consistent service quality across every project.", icon: "ShieldCheck" },
   { title: "Quality Assurance", description: "High-performance systems designed for durability and long-term savings.", icon: "Award" },
   { title: "Customer-Centric Approach", description: "Personalized support from consultation to post-installation service.", icon: "Headset" },
@@ -102,17 +114,10 @@ export interface Project {
   description: string;
   tech: string[];
   image: string;
-  /**
-   * Full set of installation photos for this project's sub-gallery.
-   * Shown when a visitor clicks the project card. If omitted or empty,
-   * the card's cover `image` is used as the only gallery photo.
-   * Replace these placeholder arrays with real project photos.
-   */
   gallery?: string[];
 }
 
 export const projects: Project[] = [
-
   { id: "p7", name: "Radhika Industries", location: "Jaipur, Rajasthan", capacity: "40 kW", category: "Industrial", description: "Rooftop solar installation powering daily manufacturing operations.", tech: ["Mono PERC", "String Inverter", "Net Metering"], image: radhikaGallery[0] ?? industrial, gallery: radhikaGallery },
   { id: "p8", name: "Ashoka Marble VKI", location: "VKI Industrial Area, Jaipur, Rajasthan", capacity: "180 kW", category: "Industrial", description: "Rooftop solar array offsetting grid dependency for marble processing operations.", tech: ["Mono PERC", "String Inverter", "Net Metering"], image: ashokaGallery[0] ?? industrial, gallery: ashokaGallery },
   { id: "p9", name: "Shakun Marbles VKI", location: "VKI Industrial Area, Jaipur, Rajasthan", capacity: "234 kW", category: "Industrial", description: "Rooftop solar system supporting marble processing operations.", tech: ["Mono PERC", "String Inverter", "Net Metering"], image: shakunGallery[0] ?? industrial, gallery: shakunGallery },
@@ -134,20 +139,59 @@ export interface Testimonial {
 }
 
 export const testimonials: Testimonial[] = [
-  { id: "t1", name: "Shubham Jaju", location: "Businessman", feedback: "Working with Soltech Energy has been a fantastic experience. Their team was knowledgeable, responsive, and guided us through every step of the solar installation process. The quality of their work is top-notch, and the support before and after the installation was outstanding. We've already started seeing the benefits in our electricity bills.", initials: "SJ" },
-  { id: "t2", name: "Mehul Singhal", location: "Businessman", feedback: "Working with Soltech Energy has been an amazing experience. Their team guided us through every step, from the initial consultation to the final installation, with complete transparency and professionalism. Our structure looks great and was customized as per our requirements. I would recommend Soltech Energy to anyone thinking about going solar!", initials: "MS" },
+  { id: "t1", 
+    name: "Shubham Jaju", 
+    location: "Businessman", 
+    feedback: "Working with Soltech Energy has been a fantastic experience. Their team was knowledgeable, responsive, and guided us through every step of the solar installation process. The quality of their work is top-notch, and the support before and after the installation was outstanding. We've already started seeing the benefits in our electricity bills.", 
+    initials: "SJ" },
+  { 
+    id: "t2", 
+    name: "Mehul Singhal", 
+    location: "Commercial Client", 
+    feedback: "Working with Soltech Energy has been an amazing experience. Their team guided us through every step, from the initial consultation to the final installation, with complete transparency and professionalism. Our structure looks great and was customized as per our requirements. I would recommend Soltech Energy to anyone thinking about going solar!", 
+    initials: "MS" 
+  },
+  {
+    id: "t3",
+    name: "Ayush Gupta",
+    location: "Residential Solar",
+    feedback: "Got our home solar system installed by Soltech Energy and the execution was seamless. From government subsidy paperwork to final grid synchronization, their team took care of everything without any hassle. Highly recommended for anyone considering residential solar!",
+    initials: "AG"
+  },
+  {
+    id: "t4",
+    name: "Dishant Somani",
+    location: "SBE",
+    feedback: "Soltech Energy handled our rooftop solar installation at SBE with complete precision. Their engineering standards, structure durability, and post-installation support have been exceptional. It has significantly reduced our operational power costs.",
+    initials: "DS"
+  },
+  {
+    id: "t5",
+    name: "Ishaan Bajaj",
+    location: "Uma Exports",
+    feedback: "Installing solar at Uma Exports with Soltech Energy was one of our best operational decisions. The installation was completed on schedule, and the system performance has consistently exceeded our expected generation metrics.",
+    initials: "IB"
+  },
+  {
+    id: "t6",
+    name: "Madhav Maharwal",
+    location: "Radhika Exports",
+    feedback: "Professionalism and quality define Soltech Energy. They customized the system layout specifically for our facility at Radhika Exports and ensured zero downtime during execution. Excellent service overall.",
+    initials: "MM"
+  },
+  {
+    id: "t7",
+    name: "Vikas Gupta",
+    location: "Gupta Carpets",
+    feedback: "The team at Soltech Energy delivered exceptional quality for Gupta Carpets. Right from net metering clearance to installation, everything was handled transparently. A reliable partner for industrial solar projects.",
+    initials: "VG"
+  }
 ];
 
 export interface Certification {
   title: string;
   issuer: string;
   icon: string;
-  /**
-   * Optional scanned/photographed certificate image. When present, the
-   * card shows a thumbnail of the actual document instead of just the
-   * icon tile, and the detail dialog shows the full certificate image.
-   * Drop real certificate scans in and set this field to enable it.
-   */
   image?: string;
 }
 
@@ -175,7 +219,12 @@ export const blogPosts: BlogPost[] = [
   { id: "b4", title: "Bifacial vs Mono PERC: What's Right for You?", excerpt: "A practical comparison of today's leading panel technologies.", category: "Solar Technology", readingTime: "7 min read", image: residential },
 ];
 
-export const faqs = [
+export interface FAQ {
+  q: string;
+  a: string;
+}
+
+export const faqs: FAQ[] = [
   { q: "How much can I save with solar?", a: "Most residential clients cut bills by 70–90%, with commercial systems paying back in 3–5 years." },
   { q: "What subsidies are available?", a: "Under PM Surya Ghar, residential rooftops qualify for central subsidies. We handle the full application for you." },
   { q: "How does net metering work?", a: "Surplus energy you generate is exported to the grid and credited against your consumption." },
@@ -184,4 +233,16 @@ export const faqs = [
   { q: "How long does installation take?", a: "Systems installations typically take Minimum 25-40 days after all documents are cleared from Jvvln (bijlee board). Or 30-40 days after approval of the file from Electricity board." },
 ];
 
-export const serviceAreas = ["Jaipur", "Ajmer", "Kota", "Udaipur", "Jodhpur", "Bikaner"];
+export interface ServiceArea {
+  name: string;
+  description: string;
+}
+
+export const serviceAreas: ServiceArea[] = [
+  { name: "Jaipur", description: "Comprehensive residential, commercial, and industrial rooftop solar projects across Pink City." },
+  { name: "Ajmer", description: "Turnkey solar engineering and net metering services tailored for local enterprises and homes." },
+  { name: "Kota", description: "High-yield commercial and institutional solar panel arrays optimized for peak sun hours." },
+  { name: "Udaipur", description: "Premium aesthetic solar solutions engineered for hotels, resorts, and private residences." },
+  { name: "Jodhpur", description: "Industrial solar installations built for high heat resistance and maximum solar yield." },
+  { name: "Bikaner", description: "Scalable commercial solar solutions designed to handle high solar irradiation efficiently." },
+];
