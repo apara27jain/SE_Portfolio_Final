@@ -40,15 +40,15 @@ export function Brochure() {
                 Everything you need to know about going solar - system options, savings models,
                 subsidy details and the Soltech difference, in one premium guide.
               </p>
-            <Button
-              size="lg"
-              asChild
-              className="mt-7 rounded-xl bg-gradient-solar px-7 font-semibold text-navy shadow-solar hover:opacity-90"
-            >
-              <a href="/soltech-brochure.pdf" target="_blank" download="Soltech Energy Brochure">
-                <Download className="mr-1 h-5 w-5" /> Download Corporate Brochure
-              </a>
-            </Button>
+              <Button
+                size="lg"
+                asChild
+                className="mt-7 rounded-xl bg-gradient-solar px-7 font-semibold text-navy shadow-solar hover:opacity-90"
+              >
+                <a href="/soltech-brochure.pdf" target="_blank" download="Soltech Energy Brochure">
+                  <Download className="mr-1 h-5 w-5" /> Download Corporate Brochure
+                </a>
+              </Button>
             </div>
           </div>
         </Reveal>
@@ -61,9 +61,30 @@ export function ServiceAreas() { return null; }
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+
+    // Trigger warning if non-numeric keys are pressed
+    if (/[^0-9]/.test(value)) {
+      setPhoneError("Only numbers are allowed");
+    } else {
+      setPhoneError("");
+    }
+
+    // Keep only numbers and enforce 10-digit limit
+    const numericOnly = value.replace(/\D/g, "").slice(0, 10);
+    setPhone(numericOnly);
+  };
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (phone.length < 10) {
+      setPhoneError("Please enter a valid 10-digit phone number");
+      return;
+    }
     setSubmitted(true);
     toast.success("Thank you! Our team will reach out within 24 hours.");
   }
@@ -97,18 +118,20 @@ export function Contact() {
                 </div>
               ))}
             </div>
+            
+            {/* Embedded Soltech Energy Jaipur Map */}
             <div className="mt-8 overflow-hidden rounded-3xl border border-white/10">
-<iframe
-  title="Soltech Energy Office Location"
-  src="https://maps.google.com/maps?q=cid:7090652854075262747&output=embed"
-  width="100%"
-  height="240"
-  style={{ border: 0 }}
-  allowFullScreen={false}
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-  className="w-full rounded-2xl grayscale filter contrast-125 transition-all duration-500 hover:grayscale-0"
-/>
+              <iframe
+                title="Soltech Energy Office Location"
+                src="https://maps.google.com/maps?q=Soltech+Energy+Jaipur&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="240"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full grayscale filter contrast-125 transition-all duration-500 hover:grayscale-0"
+              />
             </div>
           </div>
 
@@ -124,11 +147,30 @@ export function Contact() {
                 <form onSubmit={onSubmit} className="space-y-4">
                   <div className="grid gap-4 sm:grid-cols-2">
                     <Input required placeholder="Full name" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
-                    <Input required type="tel" placeholder="Phone" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
+                    
+                    {/* Strict 10-Digit Phone Input with Validation */}
+                    <div className="flex flex-col gap-1">
+                      <Input
+                        required
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        placeholder="Phone (10 digits)"
+                        value={phone}
+                        onChange={handlePhoneChange}
+                        maxLength={10}
+                        className="border-white/15 bg-white/5 text-white placeholder:text-white/40"
+                      />
+                      {phoneError && (
+                        <span className="text-xs text-amber-400 font-medium">{phoneError}</span>
+                      )}
+                    </div>
                   </div>
+                  
                   <Input type="email" placeholder="Email address" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
                   <Input placeholder="City / Location" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
                   <Textarea rows={4} placeholder="Tell us about your project…" className="border-white/15 bg-white/5 text-white placeholder:text-white/40" />
+                  
                   <Button type="submit" size="lg" className="w-full rounded-xl bg-gradient-solar font-semibold text-navy shadow-solar hover:opacity-90">
                     <Send className="mr-1 h-5 w-5" /> Schedule Free Consultation
                   </Button>
