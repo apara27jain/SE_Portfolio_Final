@@ -19,7 +19,7 @@ function trimmedProject(p: Project): Project {
 }
 
 // Link to your standalone gallery — update this URL once deployed
-const GALLERY_URL = "https://soltech-gallery-5apc-5zfzs6vrf-aparaj.vercel.app/";
+const GALLERY_URL = "https://soltech-gallery-5apc.vercel.app/";
 
 export function Projects() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
