@@ -7,7 +7,7 @@ import { ProjectGalleryDialog } from "./ProjectGallery";
 
 // Flagship projects shown in the portfolio — 300 kW+, sorted highest first
 // Only the first 3 photos of each are shown here; full gallery is in the standalone gallery
-const FLAGSHIP_IDS = ["p13", "p10", "p19"]; 
+const FLAGSHIP_IDS = ["p13", "p10", "p9"]; 
 
 const flagshipProjects = FLAGSHIP_IDS
   .map((id) => projects.find((p) => p.id === id))
