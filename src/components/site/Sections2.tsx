@@ -7,7 +7,7 @@ import { ProjectGalleryDialog } from "./ProjectGallery";
 
 // Flagship projects shown in the portfolio — 300 kW+, sorted highest first
 // Only the first 3 photos of each are shown here; full gallery is in the standalone gallery
-const FLAGSHIP_IDS = ["p11", "p12", "p13"]; // SBE 400kW, Magnatix 400kW, Westin 300kW
+const FLAGSHIP_IDS = ["p13", "p10", "p19"]; 
 
 const flagshipProjects = FLAGSHIP_IDS
   .map((id) => projects.find((p) => p.id === id))
